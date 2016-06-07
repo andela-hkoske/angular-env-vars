@@ -1,0 +1,23 @@
+doctype html
+html(lang="en" ng-app="ngEnvVars")
+	head
+		include head
+	body.bg-color.teal(flex ng-controller="HomeCtrl")
+		div(flex layout="row" layout-align="center center" style="height: 100%")
+			div(flex layout="column" layout-align="center center")
+				span.fa-stack.fa-5x.md-margin
+					i.fa.fa-circle.fa-stack-2x.text.yellow
+					i.fa.fa-cogs.fa-stack-1x
+				p.md-display-1.layout-margin Gulp Ng-config
+				md-list(flex)
+					md-divider.md-margin
+					md-list-item.md-2-line(ng-repeat="(key, value) in envVars" ng-click="null")
+						span.fa-stack.fa-lg.md-margin
+							i.fa.fa-circle.fa-stack-2x.text.orange
+							i.fa.fa-wrench.fa-stack-1x
+						.md-list-item-text.layout-margin
+							h3 {{key}}
+							p {{value}}
+				md-select(ng-model="logType" aria-label="Log Types")
+					md-option(ng-repeat="type in ['log', 'info', 'warn', 'error', 'debug']") {{type}}
+				md-button.bg-color.yellow(ng-click="log()") Log Some Error

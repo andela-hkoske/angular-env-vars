@@ -1,0 +1,46 @@
+@teal: color("#4ABDAC");
+@orange: color("#FC4A1A");
+@yellow: color("#F7B733");
+@grey: color("#DFDCE3");
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.text {
+  &.orange {
+    color: @orange !important;
+  }
+  &.teal {
+    color: @teal;
+  }
+  &.yellow {
+    color: @yellow;
+  }
+  &.grey {
+    color: @grey;
+  }
+}
+
+.bg-color {
+  color: white;
+  &.teal {
+    background-color: @teal;
+  }
+  &.orange {
+    background-color: @orange;
+  }
+  &.yellow {
+    background-color: @yellow;
+  }
+  &.grey {
+    background-color: @grey;
+  }
+  &.transparent {
+    background-color: transparent;
+  }
+}
