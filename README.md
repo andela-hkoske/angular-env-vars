@@ -38,7 +38,7 @@ module.exports = {
 
 ## Results
 
-A **config module** containing the contents of your environment's variables as constants will be created. It will look something like this.
+A **config module**, containing the contents of your environment's variables, as angular constants will be created. It will look something like this.
 ```javascript
 angular.module("ngEnvVars.config")
   .constant("ENV_VARS", {
