@@ -2,7 +2,7 @@
   Angular Environment Variable Sample Project
 </h1>
 <p align="center">
-  Demonstrates how to use gulp-ng-config to add environment variable that your angular app can access
+  Demonstrates how to use gulp-ng-config to add FE environment constants that your angular app can access.
 </p>
 
 ## Installation
