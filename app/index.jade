@@ -8,7 +8,9 @@ html(lang="en" ng-app="ngEnvVars")
 				span.fa-stack.fa-5x.md-margin
 					i.fa.fa-circle.fa-stack-2x.text.yellow
 					i.fa.fa-cogs.fa-stack-1x
-				p.md-display-1.layout-margin Gulp Ng-config
+				p.md-display-1 Angular Env Vars
+				p with
+				p.md-title gulp-ng-config
 				md-list(flex)
 					md-divider.md-margin
 					md-list-item.md-2-line(ng-repeat="(key, value) in envVars" ng-click="null")
@@ -16,7 +18,9 @@ html(lang="en" ng-app="ngEnvVars")
 							i.fa.fa-circle.fa-stack-2x.text.orange
 							i.fa.fa-wrench.fa-stack-1x
 						.md-list-item-text.layout-margin
-							h3 {{key}}
+							h3(layout="row")
+								b Env Var:&nbsp;
+								p {{key}}
 							p {{value}}
 				md-select(ng-model="logType" aria-label="Log Types")
 					md-option(ng-repeat="type in ['log', 'info', 'warn', 'error', 'debug']") {{type}}

@@ -11,9 +11,6 @@
   "dependencies": {
     "angular": "^1.5.6",
     "angular-material": "^1.0.9",
-    "angular-route": "^1.5.6",
-    "angular-ui-router": "^0.3.1",
-    "angular-resource": "^1.5.6",
     "font-awesome": "fontawesome#^4.6.3"
   }
 }
