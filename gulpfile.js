@@ -1,7 +1,15 @@
-var ENV = process.env.ENV || 'development';
+/* 
+ * We fetch the environment type
+ * If it doesn't exist, we assign it as development
+ */
+var ENV = process.env.APP_ENV || 'development';
+
+// If our environment is development, we load our local environment variables
 if (ENV === 'development') {
   require('dotenv').load();
 }
+
+// Our dependecies and file paths
 var gulp = require('gulp'),
   jade = require('gulp-jade'),
   less = require('gulp-less'),
@@ -22,7 +30,7 @@ var gulp = require('gulp'),
     },
     app: {
       jade: ['!app/shared/**', 'app/**/*.jade'],
-      styles: 'app/styles/*.+(less|css)',
+      styles: 'app/*.+(less|css)',
       staticFiles: [
         '!app/**/*.+(less|css|js|jade)',
         '!app/images/**/*',
@@ -34,11 +42,14 @@ var gulp = require('gulp'),
       }
     }
   },
+  // We use this to create the json config file required by gulp-ng-config
   makeJson = function(env, filePath) {
     fs.writeFileSync(filePath,
       JSON.stringify(env));
   };
 
+
+//
 gulp.task('ng-config', function() {
   makeJson(config[ENV], './config.json');
   gulp.src('./config.json')
@@ -68,9 +79,9 @@ gulp.task('jade', function() {
 gulp.task('less', function() {
   gulp.src(paths.app.styles)
     .pipe(less({
-      paths: [path.join(__dirname, './app/styles')]
+      paths: [path.join(__dirname, './app')]
     }))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public'));
 });
 
 gulp.task('bower', function() {

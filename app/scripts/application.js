@@ -14,22 +14,12 @@
   // Controllers
   require('./controllers.js');
 
-  // Definition of docman app and its dependencies
+  // Definition of the ngEnvVars app and its dependencies
   window.app = angular.module('ngEnvVars', [
     'ngEnvVars.config',
     'ngEnvVars.controllers',
     'ngEnvVars.services',
-    'ngRoute',
-    'ui.router',
-    'ngResource',
     'ngMaterial'
   ]);
-
-  window.app.config(function($mdThemingProvider) {
-  $mdThemingProvider.theme('default')
-    .primaryPalette('blue')
-    .accentPalette('orange');
-});
-
 }());
 

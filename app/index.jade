@@ -11,6 +11,7 @@ html(lang="en" ng-app="ngEnvVars")
 				p.md-display-1 Angular Env Vars
 				p with
 				p.md-title gulp-ng-config
+				// We display a list of our env constants here
 				md-list(flex)
 					md-divider.md-margin
 					md-list-item.md-2-line(ng-repeat="(key, value) in envVars" ng-click="null")
@@ -22,6 +23,7 @@ html(lang="en" ng-app="ngEnvVars")
 								b Env Var:&nbsp;
 								p {{key}}
 							p {{value}}
+				// We use our log service here
 				md-select(ng-model="logType" aria-label="Log Types")
 					md-option(ng-repeat="type in ['log', 'info', 'warn', 'error', 'debug']") {{type}}
-				md-button.bg-color.yellow(ng-click="log()") Log Some Error
+				md-button.bg-color.yellow(ng-click="log()") Console Log Something
